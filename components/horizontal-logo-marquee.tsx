@@ -1,5 +1,7 @@
 "use client"
 
+import { useEffect, useRef } from "react"
+
 const LOGOS = [
   "/assets/images/1.png",
   "/assets/images/2.png",
@@ -68,8 +70,46 @@ function LogoItem({
 
 export default function HorizontalLogoMarquee() {
   const size = 100
+  const blurContainerRef = useRef<HTMLDivElement>(null)
+  // #region agent log
+  useEffect(() => {
+    const el = blurContainerRef.current
+    if (!el) return
+    const log = () => {
+      const cs = el && window.getComputedStyle(el)
+      const hero = el.closest("section")
+      const heroOverflow = hero ? window.getComputedStyle(hero).overflowY : null
+      const rect = el.getBoundingClientRect()
+      fetch("http://127.0.0.1:7248/ingest/5f1e9aa8-eef2-4a42-a157-3c289db885f1", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          location: "horizontal-logo-marquee.tsx:log",
+          message: "backdrop-blur marquee computed state",
+          data: {
+            viewportW: window.innerWidth,
+            viewportH: window.innerHeight,
+            backdropFilter: cs?.backdropFilter ?? null,
+            webkitBackdropFilter: (cs as unknown as Record<string, string> | undefined)?.webkitBackdropFilter ?? null,
+            transform: cs?.transform ?? null,
+            parentSectionOverflowY: heroOverflow,
+            rect: { w: rect.width, h: rect.height, top: rect.top, left: rect.left },
+          },
+          timestamp: Date.now(),
+          hypothesisId: "A",
+        }),
+      }).catch(() => {})
+    }
+    log()
+    window.addEventListener("resize", log)
+    return () => window.removeEventListener("resize", log)
+  }, [])
+  // #endregion
   return (
-    <div className="w-full overflow-hidden min-h-[72px] flex items-center py-2 backdrop-blur-md rounded-2xl bg-white/5">
+    <div
+      ref={blurContainerRef}
+      className="w-full overflow-hidden min-h-[72px] flex items-center py-2 backdrop-blur-md rounded-2xl bg-white/5 [transform:translateZ(0)]"
+    >
       <div className="flex animate-marquee shrink-0 items-center">
         {[...LOGOS, ...LOGOS].map((src, i) => (
           <LogoItem
