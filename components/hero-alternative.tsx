@@ -39,7 +39,7 @@ export default function HeroAlternative() {
               alt="LivePet"
               width={40}
               height={40}
-              className="h-24 w-auto brightness-0 invert"
+              className="h-12 w-auto brightness-0 invert"
             />
           </div>
           <div className="flex justify-end">
