@@ -2,6 +2,7 @@ export type Locale = "pl" | "en"
 
 export const translations = {
   pl: {
+    contact: "Kontakt",
     hero: {
       headline1: "Jeden profil.",
       headline2: "Całe życie zwierzaka.",
@@ -23,6 +24,7 @@ export const translations = {
     },
   },
   en: {
+    contact: "Contact",
     hero: {
       headline1: "One profile.",
       headline2: "Your pet's whole life.",
