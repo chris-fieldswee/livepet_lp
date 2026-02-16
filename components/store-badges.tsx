@@ -16,7 +16,7 @@ export default function StoreBadges({
 }: StoreBadgesProps) {
   const { locale } = useLanguage()
   const t = translations[locale]
-  const badgeClasses = "flex items-center gap-2 px-4 py-2.5 rounded-lg cursor-not-allowed"
+  const badgeClasses = "flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg cursor-not-allowed bg-transparent shrink-0"
 
   const iconClasses = variant === "light" ? "h-8 w-8 text-zinc-800 shrink-0" : "h-8 w-8 text-white shrink-0"
   const labelClasses = variant === "light" ? "text-[10px] text-zinc-600 leading-none" : "text-[10px] text-white/90 leading-none"
@@ -56,7 +56,7 @@ export default function StoreBadges({
 
   return (
     <div className="flex flex-col gap-3 w-full max-w-xl items-center text-center">
-      <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">{badges}</div>
+      <div className="flex flex-nowrap gap-2 sm:gap-3 justify-center items-center">{badges}</div>
       {showFootnote && (
         <p className={footnoteClasses}>{t.store.footnote}</p>
       )}

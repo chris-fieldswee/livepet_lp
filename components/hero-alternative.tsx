@@ -27,7 +27,7 @@ export default function HeroAlternative() {
         aria-hidden
       />
       {/* Top bar: LivePet logo + language switch */}
-      <div className="relative z-10 flex shrink-0 items-center justify-center w-full py-8 px-6">
+      <div className="relative z-10 flex shrink-0 items-center justify-center w-full pt-8 pb-4 sm:pb-6 md:pb-8 px-6">
         <div className="absolute top-8 right-6">
           <LanguageSwitch />
         </div>
@@ -40,7 +40,7 @@ export default function HeroAlternative() {
         />
       </div>
 
-      <div className="relative z-10 flex flex-1 flex-col w-full max-w-5xl mx-auto px-6 sm:px-6 pb-0 text-center min-h-0">
+      <div className="relative z-10 flex flex-1 flex-col w-full max-w-5xl mx-auto px-6 sm:px-6 pb-0 text-center min-h-0 pt-4 sm:pt-6 md:pt-8">
         {/* Claim, signup form and badges - vertically centered */}
         <div className="flex flex-1 min-h-0 flex-col items-center justify-center">
           <h2 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6 md:mb-4 text-white leading-tight">
@@ -57,11 +57,8 @@ export default function HeroAlternative() {
             </div>
           </div>
           <div className="flex flex-col items-center w-full pt-3 sm:pt-4">
-            <div className="w-full max-w-lg mx-auto backdrop-blur-md rounded-2xl bg-black/5 px-4 py-3">
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-                <StoreBadges variant="dark" badge="app-store" showFootnote={false} />
-                <StoreBadges variant="dark" badge="google-play" showFootnote={false} />
-              </div>
+            <div className="w-full max-w-lg mx-auto px-4 py-3">
+              <StoreBadges variant="dark" badge="both" showFootnote={false} />
             </div>
           </div>
         </div>
