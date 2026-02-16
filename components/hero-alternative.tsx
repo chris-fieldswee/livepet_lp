@@ -27,7 +27,7 @@ export default function HeroAlternative() {
         aria-hidden
       />
       {/* Top bar: LivePet logo + language switch */}
-      <div className="relative z-10 flex shrink-0 items-center justify-center w-full pt-8 pb-4 sm:pb-6 md:pb-8 px-6">
+      <div className="relative z-10 flex shrink-0 items-center justify-center w-full pt-12 pb-4 sm:pb-6 md:pb-8 px-6">
         <div className="absolute top-8 right-6">
           <LanguageSwitch />
         </div>
@@ -40,7 +40,7 @@ export default function HeroAlternative() {
         />
       </div>
 
-      <div className="relative z-10 flex flex-1 flex-col w-full max-w-5xl mx-auto px-6 sm:px-6 pb-0 text-center min-h-0 pt-4 sm:pt-6 md:pt-8">
+      <div className="relative z-10 flex flex-1 flex-col w-full max-w-5xl mx-auto px-6 sm:px-6 pb-0 text-center min-h-0 pt-8 sm:pt-6 md:pt-8">
         {/* Claim, signup form and badges - vertically centered */}
         <div className="flex flex-1 min-h-0 flex-col items-center justify-center">
           <h2 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6 md:mb-4 text-white leading-tight">
