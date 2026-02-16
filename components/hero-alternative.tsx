@@ -27,8 +27,8 @@ export default function HeroAlternative() {
         aria-hidden
       />
       {/* Top bar: LivePet logo + language switch */}
-      <div className="relative z-10 flex shrink-0 items-center justify-center w-full py-8 px-4">
-        <div className="absolute top-8 right-4">
+      <div className="relative z-10 flex shrink-0 items-center justify-center w-full py-8 px-6">
+        <div className="absolute top-8 right-6">
           <LanguageSwitch />
         </div>
         <Image
@@ -40,13 +40,13 @@ export default function HeroAlternative() {
         />
       </div>
 
-      <div className="relative z-10 flex flex-1 flex-col w-full max-w-5xl mx-auto px-4 sm:px-6 pb-0 text-center min-h-0">
+      <div className="relative z-10 flex flex-1 flex-col w-full max-w-5xl mx-auto px-6 sm:px-6 pb-0 text-center min-h-0">
         {/* Claim, signup form and badges - vertically centered */}
         <div className="flex flex-1 min-h-0 flex-col items-center justify-center">
           <h2 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6 md:mb-4 text-white leading-tight">
             {t.hero.headline1}
             <br />
-            <span className="whitespace-nowrap">{t.hero.headline2}</span>
+            <span className="whitespace-normal sm:whitespace-nowrap">{t.hero.headline2}</span>
           </h2>
           <p className="text-base sm:text-lg text-white mb-4 sm:mb-5 md:mb-4 max-w-xl mx-auto whitespace-pre-line">
             {t.hero.subtitle}
@@ -57,15 +57,11 @@ export default function HeroAlternative() {
             </div>
           </div>
           <div className="flex flex-col items-center w-full pt-3 sm:pt-4">
-            <div className="grid grid-cols-[0.5fr_1fr_1fr_0.5fr] gap-2 w-full max-w-lg mx-auto">
-              <div />
-              <div className="flex justify-center">
+            <div className="w-full max-w-lg mx-auto backdrop-blur-md rounded-2xl bg-black/5 px-4 py-3">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
                 <StoreBadges variant="dark" badge="app-store" showFootnote={false} />
-              </div>
-              <div className="flex justify-center">
                 <StoreBadges variant="dark" badge="google-play" showFootnote={false} />
               </div>
-              <div />
             </div>
           </div>
         </div>

@@ -69,7 +69,7 @@ function LogoItem({
 export default function HorizontalLogoMarquee() {
   const size = 100
   return (
-    <div className="w-full overflow-hidden min-h-[72px] flex items-center py-2 backdrop-blur-md rounded-2xl">
+    <div className="w-full overflow-hidden min-h-[72px] flex items-center py-2 backdrop-blur-md rounded-2xl bg-black/5">
       <div className="flex animate-marquee shrink-0 items-center">
         {[...LOGOS, ...LOGOS].map((src, i) => (
           <LogoItem

@@ -56,7 +56,7 @@ export default function StoreBadges({
 
   return (
     <div className="flex flex-col gap-3 w-full max-w-xl items-center text-center">
-      <div className="flex flex-wrap gap-3 justify-center">{badges}</div>
+      <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">{badges}</div>
       {showFootnote && (
         <p className={footnoteClasses}>{t.store.footnote}</p>
       )}
