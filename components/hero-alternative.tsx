@@ -35,7 +35,7 @@ export default function HeroAlternative() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/assets/images/signet_black.svg"
+              src="/assets/images/app_icon.png"
               alt="LivePet"
               width={40}
               height={40}

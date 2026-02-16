@@ -23,7 +23,7 @@ export default function Topbar() {
         <div className="flex justify-center">
           <Link href="/" className="flex items-center" aria-label="LivePet - Strona główna">
             <Image
-              src="/assets/images/signet_black.svg"
+              src="/assets/images/app_icon.png"
               alt="LivePet"
               width={40}
               height={40}
