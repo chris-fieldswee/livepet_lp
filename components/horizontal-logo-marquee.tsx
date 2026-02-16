@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const LOGOS = [
   "/assets/images/1.png",
@@ -104,12 +104,42 @@ export default function HorizontalLogoMarquee() {
     window.addEventListener("resize", log)
     return () => window.removeEventListener("resize", log)
   }, [])
+  const [debugData, setDebugData] = useState<Record<string, unknown> | null>(null)
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.location.search.includes("debug=blur")) return
+    const el = blurContainerRef.current
+    if (!el) return
+    const run = () => {
+      const cs = window.getComputedStyle(el)
+      const hero = el.closest("section")
+      const heroOverflow = hero ? window.getComputedStyle(hero).overflowY : null
+      const rect = el.getBoundingClientRect()
+      setDebugData({
+        viewportW: window.innerWidth,
+        backdropFilter: cs.backdropFilter,
+        webkitBackdropFilter: (cs as unknown as Record<string, string>).webkitBackdropFilter,
+        transform: cs.transform,
+        parentSectionOverflowY: heroOverflow,
+        rect: { w: rect.width, h: rect.height },
+      })
+    }
+    run()
+    window.addEventListener("resize", run)
+    return () => window.removeEventListener("resize", run)
+  }, [])
   // #endregion
   return (
-    <div
-      ref={blurContainerRef}
-      className="w-full overflow-hidden min-h-[72px] flex items-center py-2 backdrop-blur-md rounded-2xl bg-white/5 [transform:translateZ(0)]"
-    >
+    <>
+      {debugData && (
+        <div className="mx-auto mb-2 max-w-lg rounded bg-black/80 p-2 font-mono text-xs text-green-400">
+          debug: {JSON.stringify(debugData)}
+        </div>
+      )}
+      <div
+        ref={blurContainerRef}
+        className="w-full overflow-hidden min-h-[72px] flex items-center py-2 backdrop-blur-md rounded-2xl bg-white/5 [transform:translateZ(0)]"
+        style={{ WebkitBackdropFilter: "blur(12px)" }}
+      >
       <div className="flex animate-marquee shrink-0 items-center">
         {[...LOGOS, ...LOGOS].map((src, i) => (
           <LogoItem
@@ -122,5 +152,6 @@ export default function HorizontalLogoMarquee() {
         ))}
       </div>
     </div>
+    </>
   )
 }
