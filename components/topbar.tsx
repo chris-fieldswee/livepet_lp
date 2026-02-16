@@ -14,7 +14,7 @@ export default function Topbar() {
     "https://www.linkedin.com/in/micha%C5%82-rybicki-0b7142146/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3BN1ieSMh3RESIyoGgOhi2qA%3D%3D"
 
   return (
-    <header className="relative z-10 flex shrink-0 w-full py-6 px-4 bg-transparent">
+    <header className="relative z-10 flex shrink-0 w-full py-keyline-3 px-keyline-2 bg-transparent">
       {/* Mobile: language switch (left) | signet (center) | contact (right) */}
       <div className="grid grid-cols-3 items-center w-full sm:hidden">
         <div className="flex justify-start">
@@ -44,7 +44,7 @@ export default function Topbar() {
       </div>
       {/* sm+: centered logo + right block (contact | pipe | language switch) */}
       <div className="relative hidden sm:flex items-center justify-center w-full">
-        <div className="absolute top-0 right-0 flex items-center gap-5">
+        <div className="absolute top-0 right-0 flex items-center gap-keyline-3">
           <a
             href={contactHref}
             target="_blank"

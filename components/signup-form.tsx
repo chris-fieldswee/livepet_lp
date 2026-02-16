@@ -54,18 +54,18 @@ export default function SignupForm({ align = "center", variant = "dark" }: { ali
         className={`w-full max-w-2xl ${align === "left" ? "ml-0 mr-auto" : "mx-auto"}`}
         suppressHydrationWarning
       >
-        <div className="flex flex-col sm:flex-row gap-1 w-full h-[52px] rounded-xl" aria-hidden />
+        <div className="flex flex-col sm:flex-row gap-keyline-1 w-full h-[52px] rounded-xl" aria-hidden />
       </div>
     )
   }
 
   return (
     <div className={`w-full max-w-2xl ${align === "left" ? "ml-0 mr-auto" : "mx-auto"}`}>
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 w-full sm:items-stretch">
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-keyline-1 w-full sm:items-stretch">
         <div className="relative flex-1 min-w-0">
           <label
             htmlFor="signup-email"
-            className={`absolute left-6 transition-all duration-200 pointer-events-none ${
+            className={`absolute left-keyline-3 transition-all duration-200 pointer-events-none ${
               labelFloated
                 ? "top-0 -translate-y-1/2 text-xs font-medium px-1.5"
                 : "top-1/2 -translate-y-1/2 text-base"
@@ -91,7 +91,7 @@ export default function SignupForm({ align = "center", variant = "dark" }: { ali
             placeholder=" "
             required
             aria-label={t.signup.emailPlaceholder}
-            className={`w-full h-full min-h-[56px] px-6 py-4 rounded-xl border-2 transition-[color,background-color,border-color] focus:outline-none focus:outline-[0] focus:ring-0 focus:shadow-none focus:[box-shadow:none] active:outline-none active:outline-[0] active:ring-0 active:shadow-none active:[box-shadow:none] ${
+            className={`w-full h-full min-h-[56px] px-keyline-3 py-keyline-2 rounded-xl border-2 transition-[color,background-color,border-color] focus:outline-none focus:outline-[0] focus:ring-0 focus:shadow-none focus:[box-shadow:none] active:outline-none active:outline-[0] active:ring-0 active:shadow-none active:[box-shadow:none] ${
               variant === "light"
                 ? "bg-white border-white text-zinc-900 focus:border-livepet-brown"
                 : "bg-white/10 backdrop-blur-sm !border-white/10 text-white focus:!border-livepet-brown"
@@ -101,14 +101,14 @@ export default function SignupForm({ align = "center", variant = "dark" }: { ali
         <button
           type="submit"
           disabled={isLoading}
-          className="min-h-[56px] px-6 py-4 text-sm sm:text-base bg-livepet-brown text-white rounded-full font-normal hover:bg-livepet-brown/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+          className="min-h-[56px] px-keyline-3 py-keyline-2 text-sm sm:text-base bg-livepet-brown text-white rounded-full font-normal hover:bg-livepet-brown/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
         >
           {isLoading ? t.signup.submitting : t.signup.submit}
         </button>
       </form>
       {message && (
         <div
-          className={`mt-3 px-4 py-2 rounded-lg text-sm text-center ${
+          className={`mt-keyline-2 px-keyline-2 py-keyline-1 rounded-lg text-sm text-center ${
             message.type === "success"
               ? "bg-green-500/90 text-white"
               : "bg-red-500/90 text-white"

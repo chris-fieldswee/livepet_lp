@@ -18,6 +18,13 @@ const config = {
       },
     },
     extend: {
+      /* M3-style 8dp baseline keylines for layout (spacing, gutters, margins) */
+      spacing: {
+        "keyline-1": "8px",
+        "keyline-2": "16px",
+        "keyline-3": "24px",
+        "keyline-4": "40px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

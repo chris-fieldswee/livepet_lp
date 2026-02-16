@@ -58,6 +58,21 @@
   }
 }
 
+/* Optional: M3-style 12-column layout grid for future complex layouts. Use with col-span-* for children. */
+@layer utilities {
+  .layout-grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 16px; /* keyline-2 */
+  }
+  .layout-grid-12-gutter-24 {
+    gap: 24px; /* keyline-3 */
+  }
+  .layout-grid-12-gutter-40 {
+    gap: 40px; /* keyline-4 */
+  }
+}
+
 /* Remove any focus/active outline and shadow on signup email input */
 #signup-email:focus,
 #signup-email:active {

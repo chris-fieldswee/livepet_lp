@@ -70,7 +70,7 @@ export default function HorizontalLogoMarquee() {
   const size = 100
   return (
     <div
-      className="w-full overflow-hidden min-h-[72px] flex items-center py-2 backdrop-blur-md rounded-2xl bg-white/5 [transform:translateZ(0)]"
+      className="w-full overflow-hidden min-h-[72px] flex items-center py-keyline-1 backdrop-blur-md rounded-2xl bg-white/5 [transform:translateZ(0)]"
       style={{ WebkitBackdropFilter: "blur(12px)" }}
     >
       <div className="flex animate-marquee shrink-0 items-center">
